@@ -1,1 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Glacier Express Interactivo</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#eef6ff;
+text-align:center;
+margin:0;
+padding:20px;
+}
+
+h1{
+color:#c8102e;
+}
+
+.mapa{
+max-width:90%;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+.botones{
+margin-top:20px;
+}
+
+button{
+background:#c8102e;
+color:white;
+border:none;
+padding:12px 20px;
+margin:5px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#9d0b22;
+}
+
+.tarjeta{
+display:none;
+max-width:700px;
+margin:20px auto;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.tarjeta img{
+width:100%;
+max-width:500px;
+border-radius:12px;
+}
+
+h2{
+color:#c8102e;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🚂 Glacier Express</h1>
+
+<p>
+Explora las ciudades principales del recorrido.
+</p>
+
+<img src="mapa-suiza.png" class="mapa">
+
+<div class="botones">
+
+<button onclick="mostrar('zermatt')">
+📍 Zermatt
+</button>
+
+<button onclick="mostrar('brig')">
+📍 Brig
+</button>
+
+<button onclick="mostrar('chur')">
+📍 Chur
+</button>
+
+<button onclick="mostrar('stmoritz')">
+📍 St. Moritz
+</button>
+
+</div>
+
+<!-- ZERMATT -->
+
+<div id="zermatt" class="tarjeta">
+
+<h2>Zermatt</h2>
+
+<img src="zermatt.jpg">
+
+<p>
+🏔️ Ciudad alpina famosa por el Matterhorn.
+</p>
+
+<p>
+🚂 Punto de inicio o final del Glacier Express.
+</p>
+
+<p>
+✨ Uno de los destinos más visitados de Suiza.
+</p>
+
+</div>
+
+<!-- BRIG -->
+
+<div id="brig" class="tarjeta">
+
+<h2>Brig</h2>
+
+<img src="brig.jpg">
+
+<p>
+🚉 Importante centro ferroviario de Suiza.
+</p>
+
+<p>
+🏛️ Destaca por su patrimonio histórico.
+</p>
+
+<p>
+🌄 Rodeada de impresionantes paisajes alpinos.
+</p>
+
+</div>
+
+<!-- CHUR -->
+
+<div id="chur" class="tarjeta">
+
+<h2>Chur</h2>
+
+<img src="chur.jpg">
+
+<p>
+🏘️ Considerada la ciudad más antigua de Suiza.
+</p>
+
+<p>
+🚂 Parada importante del Glacier Express.
+</p>
+
+<p>
+🌲 Rodeada por montañas y naturaleza.
+</p>
+
+</div>
+
+<!-- ST MORITZ -->
+
+<div id="stmoritz" class="tarjeta">
+
+<h2>St. Moritz</h2>
+
+<img src="stmoritz.jpg">
+
+<p>
+⛷️ Famosa por sus deportes de invierno.
+</p>
+
+<p>
+🏔️ Destino turístico de lujo reconocido mundialmente.
+</p>
+
+<p>
+🚂 Punto final o inicial del recorrido.
+</p>
+
+</div>
+
+<script>
+
+function mostrar(ciudad){
+
+const tarjetas =
+document.querySelectorAll('.tarjeta');
+
+tarjetas.forEach(
+t => t.style.display='none'
+);
+
+document.getElementById(ciudad)
+.style.display='block';
+
+}
+
+</script>
+
+</body>
+
+</html>
